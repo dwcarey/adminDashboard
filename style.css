@@ -63,14 +63,14 @@ body {
 .siteContainer {
 	height: 100vh;
 	display: grid;
-	grid-template-columns: minmax(200px, 250px) 1fr minmax(350px, 400px);
+	grid-template-columns: minmax(250px, 250px) 1fr minmax(350px, 400px);
 	grid-template-rows: minmax(168px, 168px) 1fr 1fr;
 }
 
 .sidebarContainer {
 	grid-row-start: 1;
 	grid-row-end: 4;
-	background-color: rgb(52, 52, 121);
+	background-color: #178ef7;
 	display: grid;
 	grid-template-rows: repeat(12, 50px);
 	grid-template-columns: 50px 1fr;
@@ -82,7 +82,7 @@ body {
 .headerContainer {
 	grid-column-start: 2;
 	grid-column-end: 4;
-	background-color: rgb(90, 73, 74);
+	background-color: rgb(192, 75, 75);
 	min-width: 900px;
 	min-height: 160px;
 	display: grid;
@@ -91,8 +91,14 @@ body {
 
 .contentContainer {
 	grid-area: 2 / 2 / 4 / 3;
-	background-color: rgb(165, 132, 69);
+	background-color: rgb(228, 232, 255);
 	overflow: auto;
+	display: grid;
+	width: auto;
+	padding: 32px;
+	gap: 32px;
+	grid-template-columns: repeat(auto-fill, clamp(312px, 20vw, 380px));
+	grid-template-rows: 24px repeat(auto-fill, clamp(280px, 33%, 320px));
 }
 
 .sideContentContainer {
@@ -103,12 +109,23 @@ body {
 	padding: 32px;
 	min-height: 750px;
 	overflow: hidden;
+	background-color: rgb(228, 232, 255);
+}
+
+.projectHeadingText {
+grid-area: 1 / 1 / 2 / -1 ;
+align-self: flex-start;
+}
+
+.contentCardContainer {
+	display: contents;
 }
 
 .announcementsContainer{
 	background-color: #178ef7;
 	padding: 32px;
 	border-radius: 16px;
+	box-shadow: 0 4px 0 rgb(192, 75, 75);
 
 }
 .announcementsList{
@@ -120,6 +137,7 @@ body {
 	background-color: #178ef7;
 	padding: 32px;
 	border-radius: 16px;
+	box-shadow: 0 4px 0 rgb(192, 75, 75);
 }
 
 .trendingList {
@@ -181,7 +199,7 @@ input {
 	border-radius: 16px;
 	border-style: none;
 	border-color: none;
-	background: rgb(226, 226, 226);
+	background-color: rgb(228, 232, 255);
 }
 
 button {
@@ -190,6 +208,7 @@ button {
 	border-radius: 32px;
 	border-style: none;
 	border-color: none;
+	background-color: rgb(228, 232, 255);
 }
 .buttonContainer {
 	grid-area: 2 / 3 / 3 / 6;
@@ -252,7 +271,29 @@ h3 {
 	align-self: flex-end;
 }
 
-li > p{
-	font-size: 1rem;
+h4{
+	font-size: 1.4rem;
 }
 
+li > p{
+	font-size: 1.2rem;
+}
+
+.card {
+ background-color: rgb(192, 75, 75);
+ padding: 32px;
+ border-radius: 8px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ box-shadow: 0 4px 0 #178ef7;
+}
+
+.cardIcons {
+	align-self: flex-end;
+	margin-top: 32px;
+}
+
+.cardPara {
+	justify-self: flex-start;
+}
