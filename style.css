@@ -64,6 +64,48 @@ a {
 	src: url(Roboto-Regular.ttf) format('truetype');
 }
 
+@media screen and (max-width: 1560px) {
+	div.siteContainer {
+		grid-template-columns: 360px 1fr 0px;
+	}
+	div.sideContentContainer {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 1200px) {
+	div.siteContainer {
+		grid-template-columns: 0px 1fr 0px;
+	}
+	div.sidebarContainer {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 720px) {
+	div.siteContainer {
+		grid-template-columns: 0px 1fr 0px;
+		grid-template-rows: 90px 1fr;
+	}
+	div.headerContainer {
+		grid-template-rows: 0px 1fr;
+	}
+	div.searchContainer {
+		display: none;
+	}
+	div.userNotifContainer {
+		display: none;
+	}
+	div.buttonContainer {
+		display: none;
+	}
+	div.contentContainer {
+		grid-template-columns: 70vw;
+	}
+}
+
+
+
 body {
 	font-family: 'roboto';
 	font-weight: 200;
@@ -106,7 +148,7 @@ body {
 	overflow: auto;
 	padding: 32px;
 	gap: 32px;
-	grid-template-columns: repeat(auto-fill, clamp(312px, 20vw, 380px));
+	grid-template-columns: repeat(auto-fill, clamp(340px, 20vw, 380px));
 	grid-template-rows: 24px repeat(auto-fill, clamp(280px, 33%, 320px));
 	box-shadow: inset 0 5px 5px -1px #888888, inset 5px 0 5px -1px #888888;
 }
@@ -163,6 +205,8 @@ align-self: flex-start;
 	height: 48px;
 	padding-left: 6px;
 }
+
+
 
 .headerIcon {
 	width: 60px;
@@ -221,6 +265,11 @@ button {
 		background-color: var(--red);
 		box-shadow: 2px 2px 8px #070101;;
 }
+
+button:hover {
+	background-color: var(--yellow);
+	transition: 0.75s;
+}
 .buttonContainer {
 	grid-area: 2 / 3 / 3 / 6;
 	display: flex;
@@ -237,6 +286,7 @@ button {
 
 p {
 	font-size: 2.4rem;
+	margin-bottom: 12px;
 }
 
 h2 {
@@ -305,6 +355,30 @@ li > p{
 	margin-top: 32px;
 }
 
+.sidebarItem {
+	display: contents;
+}
+
+.sidebarIcon {
+	align-self: flex-end;
+	margin-top: 32px;
+}
+.sidebarIcon:hover {
+	filter: invert(81%) sepia(53%) saturate(579%) hue-rotate(346deg) brightness(101%) contrast(94%);;
+}
+
+.sidebarCardIcon:hover + p {
+	filter: invert(81%) sepia(53%) saturate(579%) hue-rotate(346deg) brightness(101%) contrast(94%);
+}
+
+.sidebarCardIcon:hover {
+	filter: invert(81%) sepia(53%) saturate(579%) hue-rotate(346deg) brightness(101%) contrast(94%);
+}
+
 .cardPara {
 	justify-self: flex-start;
 }
+
+
+
+
